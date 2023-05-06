@@ -3,7 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="localhost.cm.gymclub">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
+        android:usesCleartextTraffic="true"
+        android:name=".HiltApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -14,10 +18,12 @@
         android:theme="@style/Theme.GymClub"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.auth.register.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.auth.MainActivity"
             android:exported="true"
-            android:label="GymClub App"
-           >
+            android:label="GymClub App">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,11 +31,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
-            android:theme="@style/Theme.GymClub.NoActionBar"
-            android:exported="true">
-
-        </activity>
+            android:name=".ui.auth.login.LoginActivity"
+            android:exported="true"
+            android:theme="@style/Theme.GymClub.NoActionBar" />
     </application>
 
 </manifest>
