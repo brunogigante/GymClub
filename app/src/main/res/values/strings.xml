@@ -14,4 +14,6 @@
     <string name="alreadyhaveaccount">Already Registered? Sign In</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <!-- my -->
+    <string name="wrong_credentials_exception">Invalid credentials</string>
 </resources>
