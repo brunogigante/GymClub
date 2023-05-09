@@ -22,10 +22,11 @@ object RetrofitModule {
     fun provideBearerInterceptor(authSharedPref: AuthSharedPref): Interceptor {
         return Interceptor { chain ->
             val request = chain.request()
-            request.newBuilder()
-                .addHeader("Authorization", "Bearer ${authSharedPref.jwt}")
-                .build()
-            chain.proceed(request)
+            val newRequest = request.newBuilder()
+            if (authSharedPref.jwt != null) {
+                newRequest.addHeader("Authorization", "Bearer ${authSharedPref.jwt}")
+            }
+            chain.proceed(newRequest.build())
         }
 
     }
@@ -36,13 +37,23 @@ object RetrofitModule {
     @RequiresApi(Build.VERSION_CODES.O)
     @Provides
     @Singleton
-    fun provideOkhttpClient(bearerInterceptor: Interceptor): OkHttpClient {
+    fun provideOkhttpClient(
+        bearerInterceptor: Interceptor,
+        authSharedPref: AuthSharedPref,
+    ): OkHttpClient {
         return OkHttpClient
             .Builder()
             .connectTimeout(Duration.ofSeconds(15))
             .readTimeout(Duration.ofSeconds(15))
             .addInterceptor(httpClientInterceptor)
             .addInterceptor(bearerInterceptor)
+            .addInterceptor {
+                val response = it.proceed(it.request())
+                if (response.code == 401) {
+                    authSharedPref.destroy()
+                }
+                response
+            }
             .build()
     }
 
