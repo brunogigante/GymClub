@@ -6,4 +6,6 @@ class DataRepository(private val dataService: DataService) {
     suspend fun getPlans() = dataService.getPlans()
 
     suspend fun getWorkoutsForPlan(planId: Int) = dataService.getWorkoutForPlan(planId)
+
+    suspend fun getGyms() = dataService.getGyms()
 }

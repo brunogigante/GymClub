@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -16,9 +17,12 @@ import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.libraries.places.api.Places
 import com.google.android.libraries.places.api.model.Place
 import com.google.android.libraries.places.api.net.PlacesClient
+import dagger.hilt.android.AndroidEntryPoint
 import localhost.cm.gymclub.R
 
+@AndroidEntryPoint
 class MapsFragment : Fragment() {
+    private val viewModel: MapsViewModel by viewModels()
 
     private val callback = OnMapReadyCallback { googleMap ->
         /**
@@ -30,9 +34,30 @@ class MapsFragment : Fragment() {
          * install it inside the SupportMapFragment. This method will only be triggered once the
          * user has installed Google Play services and returned to the app.
          */
-        val sydney = LatLng(-34.0, 151.0)
-        googleMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-        googleMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+
+
+        viewModel.gyms.observe(this) { gyms ->
+            gyms.forEach {
+                googleMap.addMarker(
+                    MarkerOptions()
+                        .position(
+                            LatLng(
+                                it.latitude, it.longitude
+                            )
+                        )
+                        .title(it.name)
+                )
+            }
+
+            val firstGym = gyms.first()
+            googleMap.moveCamera(
+                CameraUpdateFactory
+                    .newLatLngZoom(
+                        LatLng(firstGym.latitude, firstGym.longitude),
+                        10f
+                    )
+            )
+        }
 
 
     }
