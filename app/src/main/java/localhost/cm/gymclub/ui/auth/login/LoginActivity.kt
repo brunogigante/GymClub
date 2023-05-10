@@ -35,6 +35,11 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        viewModel.shouldClose.observe(this) {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
+
         viewModel.toasts.observe(this) {
             Toast.makeText(this, it, Toast.LENGTH_LONG).show()
         }

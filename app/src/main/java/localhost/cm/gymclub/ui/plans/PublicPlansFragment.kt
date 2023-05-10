@@ -31,7 +31,7 @@ class PublicPlansFragment : Fragment() {
 
         viewModel.publicPlans.observe(viewLifecycleOwner) {
             recycler.apply {
-                adapter = PlansAdapter(it)
+                adapter = PublicPlansAdapter(it, viewModel)
                 layoutManager = LinearLayoutManager(context)
             }
         }
