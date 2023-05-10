@@ -5,10 +5,15 @@
     <item
         android:id="@+id/plansFragment"
         android:icon="@drawable/ic_baseline_home_24"
-        android:title="Planos" />
+        android:title="Home" />
+
+    <item
+        android:id="@+id/publicPlansFragment"
+        android:icon="@drawable/baseline_list_24"
+        android:title="Public plans" />
 
     <item
         android:id="@+id/mapsFragment"
         android:icon="@drawable/baseline_map_24"
-        android:title="Mapa" />
+        android:title="Maps" />
 </menu>

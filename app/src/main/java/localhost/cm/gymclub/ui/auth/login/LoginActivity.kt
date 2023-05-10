@@ -36,7 +36,8 @@ class LoginActivity : AppCompatActivity() {
         }
 
         viewModel.shouldClose.observe(this) {
-            finish()
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
         }
 
         viewModel.toasts.observe(this) {
