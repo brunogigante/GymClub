@@ -22,7 +22,7 @@
         android:id="@+id/textSignIN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/alreadyhaveaccount"
+        android:text="@string/already_have_account"
         android:backgroundTint="@color/white"
         android:textColor="@color/gray1"
         android:outlineProvider="none"

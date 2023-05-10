@@ -21,7 +21,7 @@ class RegisterActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityRegisterBinding.inflate(layoutInflater)
 
-        binding.signUpButton.setOnClickListener {
+        binding.signUpButton?.setOnClickListener {
             val email = binding.editTextTextEmailAddress.text.toString()
             val password = binding.editTextTextPassword.text.toString()
             val confirmPassword = binding.editTextTextConfirmPassword.text.toString()
