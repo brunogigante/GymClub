@@ -22,7 +22,7 @@
         android:id="@+id/textViewProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="aaa"
+        android:text="@string/settings_name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.066"
@@ -52,53 +52,12 @@
         android:text="My Plans"
         android:textColor="@color/black"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/createplan"
+        app:layout_constraintBottom_toTopOf="@+id/displayExercise"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.093"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewPFP"
         app:layout_constraintVertical_bias="0.9" />
-
-    <ImageView
-        android:id="@+id/createplan"
-        android:layout_width="600dp"
-        android:layout_height="80dp"
-        android:layout_marginHorizontal="30dp"
-        android:background="@drawable/ic_button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.425" />
-
-    <TextView
-        android:id="@+id/createPlanAlert"
-        android:layout_width="190dp"
-        android:layout_height="20dp"
-        android:layout_marginHorizontal="30dp"
-        android:text="You don't have a plan yet"
-        app:layout_constraintBottom_toBottomOf="@+id/createplan"
-        app:layout_constraintEnd_toEndOf="@+id/createplan"
-        app:layout_constraintStart_toStartOf="@+id/createplan"
-        app:layout_constraintTop_toTopOf="@+id/createplan"
-        app:layout_constraintVertical_bias="0.233" />
-
-    <TextView
-        android:id="@+id/createPlanLink"
-        android:layout_width="70dp"
-        android:layout_height="20dp"
-
-        android:text="Click here"
-        android:textColor="#1CB3F4"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/createplan"
-        app:layout_constraintEnd_toEndOf="@+id/createplan"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="@+id/createplan"
-        app:layout_constraintTop_toTopOf="@+id/createplan"
-        app:layout_constraintVertical_bias="0.9" />
-
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
@@ -117,10 +76,10 @@
         android:background="@drawable/ic_button"
         app:layout_constraintBottom_toTopOf="@+id/nav_view"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintHorizontal_bias="0.473"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.937" />
+        app:layout_constraintVertical_bias="0.476" />
 
     <TextView
         android:id="@+id/exerciseTextView"

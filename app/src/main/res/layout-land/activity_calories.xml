@@ -51,7 +51,7 @@
         android:layout_marginTop="24dp"
         android:background="@drawable/ic_button"
         android:ems="10"
-        android:text="Iogurte\t\t150kcal"
+        android:text="\tIogurte\t\t150kcal"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,7 +67,7 @@
 
         android:background="@drawable/ic_button"
         android:ems="10"
-        android:text="Arroz\t\t150kcal"
+        android:text="\tArroz\t\t150kcal"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

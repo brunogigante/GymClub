@@ -22,7 +22,7 @@
         android:id="@+id/textViewProfile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="aaa"
+        android:text="@string/settings_name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.061"
@@ -42,6 +42,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.091" />
 
+
     <TextView
         android:id="@+id/myPlans"
         android:layout_width="wrap_content"
@@ -49,53 +50,12 @@
         android:text="My Plans"
         android:textColor="@color/black"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/createplan"
+        app:layout_constraintBottom_toTopOf="@+id/displayExercise"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.156"
+        app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.909" />
-
-
-    <ImageView
-        android:id="@+id/createplan"
-        android:layout_width="300dp"
-        android:layout_height="80dp"
-        android:background="@drawable/ic_button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.307" />
-
-    <TextView
-        android:id="@+id/createPlanAlert"
-        android:layout_width="190dp"
-        android:layout_height="20dp"
-
-        android:text="You don't have a plan yet"
-        app:layout_constraintBottom_toBottomOf="@+id/createplan"
-        app:layout_constraintEnd_toEndOf="@+id/createplan"
-        app:layout_constraintHorizontal_bias="0.515"
-        app:layout_constraintStart_toStartOf="@+id/createplan"
-        app:layout_constraintTop_toTopOf="@+id/createplan"
-        app:layout_constraintVertical_bias="0.3" />
-
-
-    <TextView
-        android:id="@+id/createPlanLink"
-        android:layout_width="70dp"
-        android:layout_height="20dp"
-        android:text="Click here"
-        android:textColor="#1CB3F4"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/createplan"
-        app:layout_constraintEnd_toEndOf="@+id/createPlanAlert"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="@+id/createPlanAlert"
-        app:layout_constraintTop_toBottomOf="@+id/createPlanAlert"
-        app:layout_constraintVertical_bias="0.59" />
+        app:layout_constraintTop_toBottomOf="@+id/imageViewPFP"
+        app:layout_constraintVertical_bias="0.47" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
@@ -112,25 +72,25 @@
         android:layout_width="300dp"
         android:layout_height="80dp"
         android:background="@drawable/ic_button"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/nav_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.546" />
+        app:layout_constraintVertical_bias="0.328" />
 
-    <TextView
-        android:id="@+id/exerciseTextView"
-        android:layout_width="90dp"
-        android:layout_height="20dp"
-        android:text="Bench Press"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="@+id/displayExercise"
-        app:layout_constraintEnd_toEndOf="@+id/displayExercise"
-        app:layout_constraintHorizontal_bias="0.061"
-        app:layout_constraintStart_toStartOf="@+id/displayExercise"
-        app:layout_constraintTop_toTopOf="@+id/displayExercise"
-        app:layout_constraintVertical_bias="0.266" />
+        <TextView
+            android:id="@+id/exerciseTextView"
+            android:layout_width="90dp"
+            android:layout_height="20dp"
+            android:text="@string/display_plans"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/displayExercise"
+            app:layout_constraintEnd_toEndOf="@+id/displayExercise"
+            app:layout_constraintHorizontal_bias="0.061"
+            app:layout_constraintStart_toStartOf="@+id/displayExercise"
+            app:layout_constraintTop_toTopOf="@+id/displayExercise"
+            app:layout_constraintVertical_bias="0.266" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
