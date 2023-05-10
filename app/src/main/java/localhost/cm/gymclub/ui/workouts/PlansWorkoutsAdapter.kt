@@ -13,7 +13,7 @@ class PlansWorkoutsAdapter(private val workouts: List<WorkoutResponse>): Recycle
         val planTextView: TextView
 
         init {
-            planTextView = view.findViewById(R.id.workoutName)
+            planTextView = view.findViewById(R.id.textViewWorKoutName)
         }
     }
 
