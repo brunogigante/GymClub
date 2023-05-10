@@ -13,13 +13,13 @@ class PlansWorkoutsAdapter(private val workouts: List<WorkoutResponse>): Recycle
         val planTextView: TextView
 
         init {
-            planTextView = view.findViewById(R.id.planName)
+            planTextView = view.findViewById(R.id.workoutName)
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.plan_row_item, parent, false)
+            .inflate(R.layout.workout_row_item, parent, false)
         return ViewHolder(view)
     }
 

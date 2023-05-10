@@ -5,7 +5,8 @@
     android:orientation="horizontal"
     android:layout_centerHorizontal="true"
     android:background="@color/gray4"
-    android:layout_gravity="center_horizontal">
+    android:layout_gravity="center_horizontal"
+    android:layout_marginBottom="20dp">
 
         <ImageView
             android:id="@+id/imageView2"
