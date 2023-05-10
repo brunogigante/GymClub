@@ -5,6 +5,8 @@ import localhost.cm.gymclub.data.service.DataService
 class DataRepository(private val dataService: DataService) {
     suspend fun getPlans() = dataService.getPlans()
 
+    suspend fun getPublicPlans() = dataService.getPublicPlans()
+
     suspend fun getPlan(planId: Int) = dataService.getPlan(planId)
 
     suspend fun deletePlan(planId: Int) = dataService.deletePlan(planId)

@@ -35,10 +35,6 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        viewModel.shouldClose.observe(this) {
-            finish()
-        }
-
         viewModel.toasts.observe(this) {
             Toast.makeText(this, it, Toast.LENGTH_LONG).show()
         }

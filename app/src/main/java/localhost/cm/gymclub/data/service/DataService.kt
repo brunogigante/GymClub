@@ -9,8 +9,11 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface DataService {
-    @GET("/plans")
+    @GET("/plans/me")
     suspend fun getPlans(): List<TrainingPlanResponse>
+
+    @GET("/plans/public")
+    suspend fun getPublicPlans(): List<TrainingPlanResponse>
 
     @GET("/plans/{planId}")
     suspend fun getPlan(@Path("planId") planId: Int): TrainingPlanResponse

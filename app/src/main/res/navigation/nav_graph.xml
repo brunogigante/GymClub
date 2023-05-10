@@ -29,4 +29,9 @@
             android:name="planId"
             app:argType="integer" />
     </fragment>
+    <fragment
+        android:id="@+id/publicPlansFragment"
+        android:name="localhost.cm.gymclub.ui.plans.PublicPlansFragment"
+        android:label="fragment_public_plans"
+        tools:layout="@layout/fragment_public_plans" />
 </navigation>
