@@ -29,8 +29,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|bottom"
-        android:layout_marginBottom="40dp"
+        android:layout_marginBottom="80dp"
         android:text="@string/add_workout"
+        app:cornerRadius="50dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/delete_workout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="20dp"
+        android:text="@string/delete_workout"
         app:cornerRadius="50dp"/>
 
 </FrameLayout>

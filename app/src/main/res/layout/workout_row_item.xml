@@ -1,45 +1,56 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="200dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:layout_centerHorizontal="true"
-    android:background="@color/gray4"
-    android:layout_gravity="center_horizontal"
-    android:layout_marginBottom="20dp">
+    android:background="@drawable/ic_plan_image"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_gravity="center_horizontal">
 
-        <ImageView
+        <TextView
+            android:id="@+id/textViewPlanName"
+            android:layout_width="wrap_content"
+            android:layout_height="19dp"
+            android:layout_marginStart="12dp"
+            android:hint="Plan Name"
+            android:textColor="@color/colorPrimary"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/imageView2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textViewWorKoutName"
+            android:layout_width="84dp"
+            android:layout_height="21dp"
+            android:hint="Workout Name"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/textViewPlanName"
+            app:layout_constraintTop_toBottomOf="@+id/textViewPlanName" />
+
+
+        <TextView
+            android:id="@+id/textViewDescription"
+            android:layout_width="160dp"
+            android:layout_height="34dp"
+            android:hint="Description"
+            android:textColorHint="@color/black"
+            android:textColor="@color/black"
+            android:textSize="10dp"
+            app:layout_constraintStart_toStartOf="@+id/textViewWorKoutName"
+            app:layout_constraintTop_toBottomOf="@+id/textViewWorKoutName" />
+
+        <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/imageView2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:shapeAppearanceOverlay="@style/roundImageView"
             app:srcCompat="@mipmap/ic_workout_round" />
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp">
 
-                <TextView
-                    android:id="@+id/workoutName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="ffffff"
-                    android:textSize="17dp"
-                    android:textColor="@color/gray1"
-                    android:textAlignment="center"
-                    />
-
-                <TextView
-                    android:id="@+id/workout_description"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="gggggg"/>
-
-        </LinearLayout>
-
-
-
-
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
