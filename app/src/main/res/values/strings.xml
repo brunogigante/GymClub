@@ -30,4 +30,7 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="clone_plan_confirmation">Are you sure you want to clone this plan?</string>
+    <string name="settings_name">Username</string>
+    <string name="display_plans">Display plans</string>
+    <string name="click_here">Click Here</string>
 </resources>
