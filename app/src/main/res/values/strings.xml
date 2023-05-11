@@ -33,6 +33,10 @@
     <string name="settings_name">Username</string>
     <string name="display_plans">Display plans</string>
     <string name="click_here">Click Here</string>
+    <string name="add_set">Add Set</string>
+    <string name="exercises">Exercises</string>
+    <string name="weight">Weight</string>
+    <string name="reps">Repetitions</string>
     <string name="chooseWorkout">Choose one workout</string>
     <string name="logout">Logout</string>
     <string name="startSession">Start Session</string>
