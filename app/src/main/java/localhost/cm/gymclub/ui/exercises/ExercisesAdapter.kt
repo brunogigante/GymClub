@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import localhost.cm.gymclub.R
 import localhost.cm.gymclub.data.entity.response.ExerciseResponse
+import org.w3c.dom.Text
 
 class ExercisesAdapter(private val exerciseWorkouts: List<ExerciseResponse>): RecyclerView.Adapter<ExercisesAdapter.ViewHolder>() {
     class ViewHolder(view: View): RecyclerView.ViewHolder(view) {

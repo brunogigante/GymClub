@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
@@ -37,6 +38,17 @@ class ProfileFragment : Fragment() {
             viewModel.logout()
             val intent = Intent(context, LoginActivity::class.java)
             startActivity(intent)
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        val view = requireView()
+        val usernameTextView = view.findViewById<TextView>(R.id.textViewProfileDisplay)
+
+        viewModel.getUser()
+        viewModel.user.observe(viewLifecycleOwner) {
+            usernameTextView.text = it.fullName
         }
     }
 }
