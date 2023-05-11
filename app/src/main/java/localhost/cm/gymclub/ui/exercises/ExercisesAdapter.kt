@@ -11,18 +11,24 @@ import org.w3c.dom.Text
 
 class ExercisesAdapter(private val exerciseWorkouts: List<ExerciseResponse>): RecyclerView.Adapter<ExercisesAdapter.ViewHolder>() {
     class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
-        val workoutTextView: TextView
-        val workoutDescriptionTextView: TextView
+        val exerciseNameTextView: TextView
+        val categoryTextView: TextView
+        val descriptionTextView: TextView
+        val weightValue: TextView
+        val repetitionsValue: TextView
 
         init {
-            workoutTextView = view.findViewById(R.id.textViewWorKoutName)
-            workoutDescriptionTextView = view.findViewById(R.id.textViewDescription)
+            exerciseNameTextView = view.findViewById(R.id.exerciseNameTextView)
+            categoryTextView = view.findViewById(R.id.categoryTextView)
+            descriptionTextView = view.findViewById(R.id.textViewDescription)
+            weightValue = view.findViewById(R.id.weightValue)
+            repetitionsValue = view.findViewById(R.id.repetitionsValue)
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.workout_row_item, parent, false)
+            .inflate(R.layout.exercise_row_item, parent, false)
         return ViewHolder(view)
     }
 
@@ -31,7 +37,10 @@ class ExercisesAdapter(private val exerciseWorkouts: List<ExerciseResponse>): Re
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val exercise = exerciseWorkouts[position]
 
-        holder.workoutTextView.text = exercise.name
-        holder.workoutDescriptionTextView.text = exercise.description
+        holder.exerciseNameTextView.text = exercise.name
+        holder.categoryTextView.text = exercise.category
+        holder.descriptionTextView.text = exercise.description
+        holder.repetitionsValue.text = exercise.repetitions.toString()
+        holder.weightValue.text = exercise.weight.toString()
     }
 }
