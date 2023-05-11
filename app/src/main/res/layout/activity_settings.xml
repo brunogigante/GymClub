@@ -149,7 +149,7 @@
         android:layout_width="700px"
         android:layout_height="40dp"
         android:background="@drawable/ic_button"
-        android:text="Logout"
+        android:text="@string/logout"
         android:textColor="@color/white"
         app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
