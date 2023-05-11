@@ -16,6 +16,9 @@
                 android:name="planId"
                 android:defaultValue="0" />
         </action>
+        <action
+            android:id="@+id/action_plansFragment_to_addPlanFragment"
+            app:destination="@id/addPlanFragment" />
     </fragment>
     <fragment
         android:id="@+id/mapsFragment"
@@ -28,10 +31,53 @@
         <argument
             android:name="planId"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_planWorkoutFragment_to_addWorkoutFragment"
+            app:destination="@id/addWorkoutFragment" />
+        <action
+            android:id="@+id/action_planWorkoutFragment_to_planWorkoutsExercises"
+            app:destination="@id/planWorkoutsExercises" />
     </fragment>
     <fragment
         android:id="@+id/publicPlansFragment"
         android:name="localhost.cm.gymclub.ui.plans.PublicPlansFragment"
         android:label="fragment_public_plans"
         tools:layout="@layout/fragment_public_plans" />
+    <fragment
+        android:id="@+id/addPlanFragment"
+        android:name="localhost.cm.gymclub.ui.plans.AddPlanFragment"
+        android:label="AddPlanFragment" />
+    <fragment
+        android:id="@+id/addWorkoutFragment"
+        android:name="localhost.cm.gymclub.ui.workouts.AddWorkoutFragment"
+        android:label="fragment_add_workout"
+        tools:layout="@layout/fragment_add_workout" >
+        <argument
+            android:name="planId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="localhost.cm.gymclub.ui.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/planWorkoutsExercises"
+        android:name="localhost.cm.gymclub.ui.exercises.ExercisesFragment"
+        android:label="PlanWorkoutsExercises" >
+        <argument
+            android:name="workoutId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_planWorkoutsExercises_to_addWorkoutExerciseFragment"
+            app:destination="@id/addWorkoutExerciseFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addWorkoutExerciseFragment"
+        android:name="localhost.cm.gymclub.ui.exercises.AddExerciseFragment"
+        android:label="AddWorkoutExerciseFragment" >
+        <argument
+            android:name="workoutId"
+            app:argType="integer" />
+    </fragment>
 </navigation>

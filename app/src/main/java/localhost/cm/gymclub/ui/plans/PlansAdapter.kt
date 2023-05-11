@@ -9,8 +9,9 @@ import androidx.recyclerview.widget.RecyclerView
 import localhost.cm.gymclub.R
 import localhost.cm.gymclub.data.entity.response.TrainingPlanResponse
 
-class PlansAdapter(private val plans: List<TrainingPlanResponse>): RecyclerView.Adapter<PlansAdapter.ViewHolder>() {
-    class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
+class PlansAdapter(private val plans: List<TrainingPlanResponse>) :
+    RecyclerView.Adapter<PlansAdapter.ViewHolder>() {
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val planTextView: TextView
 
         init {
@@ -31,7 +32,8 @@ class PlansAdapter(private val plans: List<TrainingPlanResponse>): RecyclerView.
 
         holder.planTextView.text = plan.name
         holder.itemView.setOnClickListener {
-            val action = PlansFragmentDirections.actionPlansFragmentToPlanWorkoutFragment(plan.id.toInt())
+            val action =
+                PlansFragmentDirections.actionPlansFragmentToPlanWorkoutFragment(plan.id.toInt())
             val navController = holder.itemView.findNavController()
             navController.navigate(action)
         }

@@ -10,7 +10,8 @@ import localhost.cm.gymclub.data.repository.DataRepository
 import javax.inject.Inject
 
 @HiltViewModel
-class PublicPlansViewModel @Inject constructor(private val dataRepository: DataRepository) : ViewModel() {
+class PublicPlansViewModel @Inject constructor(private val dataRepository: DataRepository) :
+    ViewModel() {
     var publicPlans = MutableLiveData<List<TrainingPlanResponse>>()
 
     init {

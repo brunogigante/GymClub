@@ -1,14 +1,15 @@
 package localhost.cm.gymclub.ui.workouts
 
 import android.app.AlertDialog
-import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.viewModels
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -30,11 +31,14 @@ class PlanWorkouts : Fragment() {
         return inflater.inflate(R.layout.fragment_plan_workouts, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        val recycler = requireView().findViewById<RecyclerView>(R.id.fragment_recycler_view)
-        val planNameTextView = requireView().findViewById<TextView>(R.id.plan_name)
-        val deleteButton = requireView().findViewById<TextView>(R.id.delete_workout)
+    override fun onResume() {
+        super.onResume()
+
+        val view = requireView()
+        val recycler = view.findViewById<RecyclerView>(R.id.fragment_recycler_view)
+        val planNameTextView = view.findViewById<TextView>(R.id.plan_name)
+        val deleteButton = view.findViewById<TextView>(R.id.delete_workout)
+        val addButton = view.findViewById<Button>(R.id.add_workout)
 
         viewModel.getWorkoutsAndPlanByPlanId(args.planId)
 
@@ -58,6 +62,16 @@ class PlanWorkouts : Fragment() {
                     findNavController().popBackStack()
                 }
                 .setNegativeButton(R.string.no) { _, _ -> }.show()
+        }
+
+        addButton.setOnClickListener {
+            val action = planId?.let { it1 ->
+                PlanWorkoutsDirections.actionPlanWorkoutFragmentToAddWorkoutFragment(
+                    it1.toInt())
+            }
+            if (action != null) {
+                view.findNavController().navigate(action)
+            }
         }
     }
 

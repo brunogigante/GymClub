@@ -22,11 +22,11 @@ class PublicPlansFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-        return inflater.inflate(R.layout.fragment_plans, container, false)
+        return inflater.inflate(R.layout.fragment_public_plans, container, false)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onResume() {
+        super.onResume()
         val recycler = requireView().findViewById<RecyclerView>(R.id.fragment_recycler_view)
 
         viewModel.publicPlans.observe(viewLifecycleOwner) {

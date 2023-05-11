@@ -11,8 +11,11 @@ import androidx.recyclerview.widget.RecyclerView
 import localhost.cm.gymclub.R
 import localhost.cm.gymclub.data.entity.response.TrainingPlanResponse
 
-class PublicPlansAdapter(private val publicPlans: List<TrainingPlanResponse>, private val viewModel: PublicPlansViewModel): RecyclerView.Adapter<PublicPlansAdapter.ViewHolder>() {
-    class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
+class PublicPlansAdapter(
+    private val publicPlans: List<TrainingPlanResponse>,
+    private val viewModel: PublicPlansViewModel,
+) : RecyclerView.Adapter<PublicPlansAdapter.ViewHolder>() {
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val planTextView: TextView
 
         init {
