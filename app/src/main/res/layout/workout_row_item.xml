@@ -3,10 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+
+    android:layout_gravity="center_horizontal"
     android:background="@drawable/ic_plan_image"
-    app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
-    android:layout_gravity="center_horizontal">
+    app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:id="@+id/textViewPlanName"
@@ -35,8 +37,8 @@
             android:layout_width="160dp"
             android:layout_height="34dp"
             android:hint="Description"
-            android:textColorHint="@color/black"
             android:textColor="@color/black"
+            android:textColorHint="@color/black"
             android:textSize="10dp"
             app:layout_constraintStart_toStartOf="@+id/textViewWorKoutName"
             app:layout_constraintTop_toBottomOf="@+id/textViewWorKoutName" />
@@ -45,12 +47,14 @@
             android:id="@+id/imageView2"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_marginStart="4dp"
             android:adjustViewBounds="false"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintVertical_bias="1.0"
             app:shapeAppearanceOverlay="@style/roundImageView"
-            app:srcCompat="@mipmap/ic_workout_round" />
+            app:srcCompat="@drawable/bench_press" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
