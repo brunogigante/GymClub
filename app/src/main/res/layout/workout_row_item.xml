@@ -3,57 +3,61 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_gravity="center_horizontal"
+
+    android:layout_marginBottom="10dp"
     android:background="@drawable/ic_plan_image"
-    android:layout_marginBottom="10dp">
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent">
 
-        <TextView
-            android:id="@+id/workoutNameTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="21dp"
-            android:layout_marginStart="12dp"
-            android:layout_marginTop="16dp"
-            android:hint="Workout Name"
-            android:textStyle="bold"
-            android:textColor="@color/black"
+    <TextView
+        android:id="@+id/workoutNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="21dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="16dp"
+        android:hint="Workout Name"
+        android:textColor="@color/black"
+        android:textStyle="bold"
 
-            app:layout_constraintStart_toEndOf="@+id/imageView2"
-            app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/planNameTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="19dp"
-            android:textSize="12dp"
-            android:hint="Plan Name"
-            android:textColor="@color/colorPrimary"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/workoutNameTextView"
-            app:layout_constraintTop_toBottomOf="@+id/workoutNameTextView" />
+    <TextView
+        android:id="@+id/planNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="19dp"
+        android:hint="Plan Name"
+        android:textColor="@color/colorPrimary"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/workoutNameTextView"
+        app:layout_constraintTop_toBottomOf="@+id/workoutNameTextView" />
 
 
-        <TextView
-            android:id="@+id/textViewDescription"
-            android:layout_width="160dp"
-            android:layout_height="34dp"
-            android:hint="Description"
-            android:textColorHint="@color/black"
-            android:textColor="@color/black"
-            android:textSize="10dp"
-            app:layout_constraintStart_toStartOf="@+id/planNameTextView"
-            app:layout_constraintTop_toBottomOf="@+id/planNameTextView" />
+    <TextView
+        android:id="@+id/textViewDescription"
+        android:layout_width="160dp"
+        android:layout_height="34dp"
+        android:hint="Description"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="10dp"
+        app:layout_constraintStart_toStartOf="@+id/planNameTextView"
+        app:layout_constraintTop_toBottomOf="@+id/planNameTextView" />
 
-        <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imageView2"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="15dp"
-            android:adjustViewBounds="false"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@mipmap/ic_workout" />
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginStart="4dp"
+        android:adjustViewBounds="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:shapeAppearanceOverlay="@style/roundImageView"
+        app:srcCompat="@drawable/bench_press" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
