@@ -41,6 +41,6 @@ class ExercisesAdapter(private val exerciseWorkouts: List<ExerciseResponse>): Re
         holder.categoryTextView.text = exercise.category
         holder.descriptionTextView.text = exercise.description
         holder.repetitionsValue.text = exercise.repetitions.toString()
-        holder.weightValue.text = exercise.weight.toString()
+        holder.weightValue.text = exercise.weight.toString() + " Kg"
     }
 }
