@@ -36,16 +36,15 @@
         android:id="@+id/weight"
         android:layout_width="270dp"
         android:layout_height="50dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="25dp"
         android:background="@drawable/shapes"
         android:gravity="center_vertical"
-        android:textColor="#9E9E9E"
         android:hint="@string/weight"
-        android:inputType="number"
-        app:layout_constraintStart_toStartOf="@+id/spinner"
-        app:layout_constraintTop_toBottomOf="@+id/spinner"
         android:importantForAutofill="no"
-         />
+        android:inputType="number"
+        android:textColor="#9E9E9E"
+        app:layout_constraintStart_toStartOf="@+id/exercises"
+        app:layout_constraintTop_toBottomOf="@+id/exercises" />
 
     <EditText
         android:id="@+id/reps"
@@ -66,21 +65,12 @@
         android:id="@+id/addExerciseButton"
         android:layout_width="270dp"
         android:layout_height="50dp"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="50dp"
         android:background="@drawable/shapes"
         android:text="@string/add_set"
         android:textColor="#FFFFFF"
         app:layout_constraintStart_toStartOf="@+id/reps"
         app:layout_constraintTop_toBottomOf="@+id/reps" />
-
-    <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="270dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/ic_button"
-        app:layout_constraintStart_toStartOf="@+id/exercises"
-        app:layout_constraintTop_toBottomOf="@+id/exercises" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
