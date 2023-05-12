@@ -33,6 +33,4 @@
         android:text="@string/add_exercise"
         app:cornerRadius="50dp"/>
 
-
-
 </FrameLayout>
