@@ -7,26 +7,28 @@
     android:layout_marginBottom="10dp">
 
         <TextView
-            android:id="@+id/WorkoutNameTextView"
+            android:id="@+id/workoutNameTextView"
             android:layout_width="wrap_content"
-            android:layout_height="19dp"
+            android:layout_height="21dp"
             android:layout_marginStart="12dp"
             android:layout_marginTop="16dp"
-            android:hint="Plan Name"
-            android:textColor="@color/colorPrimary"
-            android:textSize="12dp"
+            android:hint="Workout Name"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+
             app:layout_constraintStart_toEndOf="@+id/imageView2"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textViewWorKoutName"
-            android:layout_width="84dp"
-            android:layout_height="21dp"
-            android:hint="Workout Name"
-            android:textColor="@color/black"
+            android:id="@+id/planNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="19dp"
+            android:textSize="12dp"
+            android:hint="Plan Name"
+            android:textColor="@color/colorPrimary"
             android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="@+id/WorkoutNameTextView"
-            app:layout_constraintTop_toBottomOf="@+id/WorkoutNameTextView" />
+            app:layout_constraintStart_toStartOf="@+id/workoutNameTextView"
+            app:layout_constraintTop_toBottomOf="@+id/workoutNameTextView" />
 
 
         <TextView
@@ -37,8 +39,8 @@
             android:textColorHint="@color/black"
             android:textColor="@color/black"
             android:textSize="10dp"
-            app:layout_constraintStart_toStartOf="@+id/textViewWorKoutName"
-            app:layout_constraintTop_toBottomOf="@+id/textViewWorKoutName" />
+            app:layout_constraintStart_toStartOf="@+id/planNameTextView"
+            app:layout_constraintTop_toBottomOf="@+id/planNameTextView" />
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/imageView2"
