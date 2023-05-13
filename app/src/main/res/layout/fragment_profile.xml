@@ -29,6 +29,18 @@
         app:layout_constraintStart_toEndOf="@+id/imageViewPFPSettings"
         app:layout_constraintTop_toTopOf="@+id/imageViewPFPSettings" />
 
+    <TextView
+        android:id="@+id/altTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/premiumTier"
+        android:textColor="@color/gold"
+        android:textSize="10dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textViewProfileDisplay"
+        app:layout_constraintTop_toBottomOf="@+id/textViewProfileDisplay" />
+
     <ImageView
         android:id="@+id/profileicon"
         android:layout_width="wrap_content"
