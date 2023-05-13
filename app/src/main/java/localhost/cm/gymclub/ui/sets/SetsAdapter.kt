@@ -32,7 +32,7 @@ class SetsAdapter(private val exerciseSets: List<SetResponse>): RecyclerView.Ada
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val exercise = exerciseSets[position]
 
-        holder.setsNameTextView.text = exercise.id.toString()
+        holder.setsNameTextView.text = "Set #" + exercise.id.toString()
         holder.repetitionsValue.text = exercise.repetitions.toString()
         holder.weightValue.text = exercise.weight.toString() + " Kg"
     }

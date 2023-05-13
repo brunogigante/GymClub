@@ -6,14 +6,15 @@
     android:layout_gravity="center_horizontal"
 
     android:layout_marginBottom="10dp"
+
     android:background="@drawable/ic_plan_image"
     app:layout_constraintEnd_toEndOf="parent"
     app:layout_constraintStart_toStartOf="parent">
 
     <TextView
         android:id="@+id/workoutNameTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="21dp"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="16dp"
         android:hint="Workout Name"
@@ -25,8 +26,8 @@
 
     <TextView
         android:id="@+id/planNameTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="19dp"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
         android:hint="Plan Name"
         android:textColor="@color/colorPrimary"
         android:textSize="12dp"
@@ -38,7 +39,7 @@
     <TextView
         android:id="@+id/textViewDescription"
         android:layout_width="160dp"
-        android:layout_height="34dp"
+        android:layout_height="wrap_content"
         android:hint="Description"
         android:textColor="@color/black"
         android:textColorHint="@color/black"
@@ -50,7 +51,7 @@
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="0dp"
         android:adjustViewBounds="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
