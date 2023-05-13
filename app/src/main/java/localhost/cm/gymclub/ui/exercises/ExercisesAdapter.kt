@@ -4,12 +4,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import localhost.cm.gymclub.R
 import localhost.cm.gymclub.data.entity.response.ExerciseResponse
-import org.w3c.dom.Text
 
-class ExercisesAdapter(private val exerciseWorkouts: List<ExerciseResponse>): RecyclerView.Adapter<ExercisesAdapter.ViewHolder>() {
+class ExercisesAdapter(private val exerciseWorkouts: List<ExerciseResponse>, private val workoutId: Int): RecyclerView.Adapter<ExercisesAdapter.ViewHolder>() {
     class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
         val exerciseNameTextView: TextView
         val categoryTextView: TextView
@@ -42,5 +42,11 @@ class ExercisesAdapter(private val exerciseWorkouts: List<ExerciseResponse>): Re
         holder.descriptionTextView.text = exercise.description
         holder.repetitionsValue.text = exercise.repetitions.toString()
         holder.weightValue.text = exercise.weight.toString() + " Kg"
+        holder.itemView.setOnClickListener {
+            val action =
+                ExercisesFragmentDirections.actionPlanWorkoutsExercisesToSetsFragment(workoutId, exercise.id)
+            val navController = holder.itemView.findNavController()
+            navController.navigate(action)
+        }
     }
 }

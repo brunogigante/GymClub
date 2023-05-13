@@ -71,11 +71,36 @@
         <action
             android:id="@+id/action_planWorkoutsExercises_to_addWorkoutExerciseFragment"
             app:destination="@id/addWorkoutExerciseFragment" />
+        <action
+            android:id="@+id/action_planWorkoutsExercises_to_setsFragment"
+            app:destination="@id/setsFragment" />
     </fragment>
     <fragment
         android:id="@+id/addWorkoutExerciseFragment"
         android:name="localhost.cm.gymclub.ui.exercises.AddExerciseFragment"
         android:label="AddWorkoutExerciseFragment" >
+        <argument
+            android:name="workoutId"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/setsFragment"
+        android:name="localhost.cm.gymclub.ui.sets.SetsFragment"
+        android:label="Exercise Sets" >
+        <argument
+            android:name="workoutId"
+            app:argType="integer" />
+        <argument
+            android:name="exerciseId"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_setsFragment_to_addSet"
+            app:destination="@id/addSet" />
+    </fragment>
+    <fragment
+        android:id="@+id/addSet"
+        android:name="localhost.cm.gymclub.ui.sets.AddSetsFragment"
+        android:label="Add Sets" >
         <argument
             android:name="workoutId"
             app:argType="integer" />

@@ -4,8 +4,10 @@ import localhost.cm.gymclub.data.entity.request.PlanCreationRequest
 import localhost.cm.gymclub.data.entity.request.TrainingPlanCloneRequest
 import localhost.cm.gymclub.data.entity.request.WorkoutCreationRequest
 import localhost.cm.gymclub.data.entity.request.WorkoutExerciseCreationRequest
+import localhost.cm.gymclub.data.entity.request.WorkoutExerciseSetCreationRequest
 import localhost.cm.gymclub.data.entity.response.ExerciseResponse
 import localhost.cm.gymclub.data.entity.response.GymResponse
+import localhost.cm.gymclub.data.entity.response.SetResponse
 import localhost.cm.gymclub.data.entity.response.TrainingPlanResponse
 import localhost.cm.gymclub.data.entity.response.UserResponse
 import localhost.cm.gymclub.data.entity.response.WorkoutResponse
@@ -31,20 +33,17 @@ interface DataService {
     @DELETE("/plans/{planId}")
     suspend fun deletePlan(@Path("planId") planId: Int)
 
-
     @POST("/plans/clone")
     suspend fun clonePlan(@Body trainingPlanClone: TrainingPlanCloneRequest)
 
     @GET("/plans/{planId}/workouts")
     suspend fun getWorkoutForPlan(@Path("planId") planId: Int): List<WorkoutResponse>
 
-
     @GET("/gyms")
     suspend fun getGyms(): List<GymResponse>
 
     @GET("/users/authenticated")
     suspend fun getAuthenticatedUser(): UserResponse
-
 
     // workouts
     @POST("/plans/{planId}/workouts")
@@ -64,4 +63,15 @@ interface DataService {
 
     @GET("plans/workouts/{workoutId}")
     suspend fun getWorkout(@Path("workoutId") workoutId: Int): WorkoutResponse
+
+    //Sets
+    @GET("/plans/workouts/{workoutId}/exercises/{exerciseId}/sets")
+    suspend fun getWorkoutExerciseSets(@Path("workoutId") workoutId:Int, @Path("exerciseId") exerciseId: Int): List<SetResponse>
+
+    @GET("/sets")
+    suspend fun getSets(): List<SetResponse>
+
+    @POST("/plans/workouts/{workoutId}/exercises/{exerciseId}/sets")
+    suspend fun createExerciseSet(@Path("setId") setId: Int, @Path("reps") reps: Int, @Path("weight") weight: Int, @Path("workoutId") workoutId: Int, @Path("exerciseId") exerciseId: Int, @Body workoutExerciseSetCreationRequest: WorkoutExerciseSetCreationRequest)
+
 }

@@ -12,40 +12,69 @@
     app:layout_constraintStart_toStartOf="parent">
 
     <TextView
-        android:id="@+id/workoutNameTextView"
+        android:id="@+id/setsNameTextView"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="16dp"
-        android:hint="Workout Name"
+        android:hint="Set #"
+        android:textSize="20dp"
         android:textColor="@color/black"
         android:textStyle="bold"
-
         app:layout_constraintStart_toEndOf="@+id/imageView2"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/planNameTextView"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:hint="Plan Name"
-        android:textColor="@color/colorPrimary"
-        android:textSize="12dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/workoutNameTextView"
-        app:layout_constraintTop_toBottomOf="@+id/workoutNameTextView" />
-
 
     <TextView
-        android:id="@+id/textViewDescription"
-        android:layout_width="160dp"
+        android:id="@+id/textViewRepetitions"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Description"
+        android:layout_marginTop="20dp"
+        android:text="Repetitions: "
         android:textColor="@color/black"
         android:textColorHint="@color/black"
-        android:textSize="10dp"
-        app:layout_constraintStart_toStartOf="@+id/planNameTextView"
-        app:layout_constraintTop_toBottomOf="@+id/planNameTextView" />
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/setsNameTextView"
+        app:layout_constraintTop_toBottomOf="@+id/setsNameTextView" />
+
+
+    <TextView
+        android:id="@+id/repetitionsValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="reps"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewRepetitions"
+        app:layout_constraintStart_toEndOf="@+id/textViewRepetitions" />
+
+
+
+    <TextView
+        android:id="@+id/textViewWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Weight: "
+        android:textColorHint="@color/black"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/textViewRepetitions"
+        app:layout_constraintTop_toBottomOf="@+id/textViewRepetitions" />
+
+    <TextView
+        android:id="@+id/weightValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="weight kg"
+        android:textColor="@color/black"
+        android:textColorHint="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/textViewWeight"
+        app:layout_constraintStart_toEndOf="@+id/textViewWeight" />
+
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/imageView2"

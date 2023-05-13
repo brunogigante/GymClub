@@ -4,7 +4,7 @@ import localhost.cm.gymclub.data.entity.request.PlanCreationRequest
 import localhost.cm.gymclub.data.entity.request.TrainingPlanCloneRequest
 import localhost.cm.gymclub.data.entity.request.WorkoutCreationRequest
 import localhost.cm.gymclub.data.entity.request.WorkoutExerciseCreationRequest
-import localhost.cm.gymclub.data.entity.response.ExerciseResponse
+import localhost.cm.gymclub.data.entity.request.WorkoutExerciseSetCreationRequest
 import localhost.cm.gymclub.data.service.DataService
 
 class DataRepository(private val dataService: DataService) {
@@ -36,8 +36,14 @@ class DataRepository(private val dataService: DataService) {
 
     suspend fun getExercises() = dataService.getExercises()
 
-
     suspend fun getWorkout(workoutId: Int) = dataService.getWorkout(workoutId)
 
     suspend fun getWorkoutExercises(workoutId: Int) = dataService.getWorkoutExercises(workoutId)
+
+    suspend fun getSets() = dataService.getSets()
+
+    suspend fun getWorkoutExerciseSets(workoutId: Int, exerciseId: Int) = dataService.getWorkoutExerciseSets(workoutId, exerciseId)
+
+    suspend fun createExerciseSet(setId: Int, reps: Int, weight: Int, workoutId: Int, exerciseId: Int) = dataService.createExerciseSet(setId, reps, weight, workoutId, exerciseId, WorkoutExerciseSetCreationRequest(workoutId, exerciseId))
+
 }
