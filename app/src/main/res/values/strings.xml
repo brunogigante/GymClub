@@ -59,4 +59,5 @@
     <string name="choose_workout">Choose one workout</string>
     <string name="start_session">Start Session</string>
     <string name="currentSets">Current Sets</string>
+    <string name="premiumTier">Premium User</string>
 </resources>
