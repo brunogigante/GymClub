@@ -28,15 +28,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewCreatePlan" />
 
+    <EditText
+        android:id="@+id/editTextDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:hint="Description"
+        app:layout_constraintEnd_toEndOf="@+id/editTextPlanName"
+        app:layout_constraintStart_toStartOf="@+id/editTextPlanName"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPlanName" />
+
     <CheckBox
         android:id="@+id/editTextPlanVisibility"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
         android:text="Public"
-        app:layout_constraintEnd_toEndOf="@+id/editTextPlanName"
-        app:layout_constraintStart_toStartOf="@+id/editTextPlanName"
-        app:layout_constraintTop_toBottomOf="@+id/editTextPlanName" />
+        app:layout_constraintEnd_toEndOf="@+id/editTextDescription"
+        app:layout_constraintStart_toStartOf="@+id/editTextDescription"
+        app:layout_constraintTop_toBottomOf="@+id/editTextDescription" />
 
     <Button
         android:id="@+id/buttonCreatePlan"

@@ -31,11 +31,12 @@ class AddPlanFragment : Fragment() {
 
         val planNameEditText = view.findViewById<EditText>(R.id.editTextPlanName)
         val planVisibilityCheckBox = view.findViewById<CheckBox>(R.id.editTextPlanVisibility)
+        val planDescriptionEditText = view.findViewById<EditText>(R.id.editTextDescription)
 
 
         val createPlanButton = view.findViewById<Button>(R.id.buttonCreatePlan)
         createPlanButton.setOnClickListener {
-            viewModel.createPlan(planNameEditText.text.toString(), planVisibilityCheckBox.isChecked)
+            viewModel.createPlan(planNameEditText.text.toString(), planVisibilityCheckBox.isChecked, planDescriptionEditText.text.toString())
 
             Toast.makeText(context, "Success creating plan", Toast.LENGTH_LONG).show()
             view.findNavController().popBackStack()
