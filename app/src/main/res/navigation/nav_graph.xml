@@ -104,5 +104,8 @@
         <argument
             android:name="workoutId"
             app:argType="integer" />
+        <argument
+            android:name="exerciseId"
+            app:argType="integer" />
     </fragment>
 </navigation>

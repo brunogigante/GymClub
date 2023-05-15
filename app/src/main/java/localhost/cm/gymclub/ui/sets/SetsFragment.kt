@@ -49,9 +49,8 @@ class SetsFragment : Fragment(){
 
 
         addButton.setOnClickListener {
-            val action = SetsFragmentDirections.actionSetsFragmentToAddSet(args.workoutId)
+            val action = SetsFragmentDirections.actionSetsFragmentToAddSet(args.workoutId, args.exerciseId)
             view.findNavController().navigate(action)
-
         }
     }
 }
