@@ -14,8 +14,8 @@ class DataRepository(private val dataService: DataService) {
 
     suspend fun getPlan(planId: Int) = dataService.getPlan(planId)
 
-    suspend fun createPlan(name: String, isPublic: Boolean) =
-        dataService.createPlan(PlanCreationRequest(name, isPublic))
+    suspend fun createPlan(name: String, isPublic: Boolean, description: String) =
+        dataService.createPlan(PlanCreationRequest(name, isPublic, description))
 
     suspend fun deletePlan(planId: Int) = dataService.deletePlan(planId)
 

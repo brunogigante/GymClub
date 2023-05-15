@@ -10,9 +10,9 @@ import javax.inject.Inject
 @HiltViewModel
 class AddPlanViewModel @Inject constructor(private val dataRepository: DataRepository) :
     ViewModel() {
-    fun createPlan(name: String, isPublic: Boolean) {
+    fun createPlan(name: String, isPublic: Boolean, description: String) {
         viewModelScope.launch {
-            dataRepository.createPlan(name, isPublic)
+            dataRepository.createPlan(name, isPublic, description)
         }
     }
 }
