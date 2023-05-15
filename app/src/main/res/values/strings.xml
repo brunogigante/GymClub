@@ -19,7 +19,7 @@
     <string name="confirm_password">Confirm Password</string>
     <string name="first_name">First Name</string>
     <string name="last_name">Last Name</string>
-    <string name="add_workout">Add New Workout Day</string>
+    <string name="add_workout">New Workout</string>
     <string name="delete_workout">Delete Plan</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -33,7 +33,7 @@
     <string name="settings_name">Username</string>
     <string name="display_plans">Display plans</string>
     <string name="click_here">Click Here</string>
-    <string name="add_set">Add Set</string>
+    <string name="add_set">New Set</string>
     <string name="exercises">Exercises</string>
     <string name="weight">Weight</string>
     <string name="reps">Repetitions</string>
@@ -60,4 +60,10 @@
     <string name="start_session">Start Session</string>
     <string name="currentSets">Current Sets</string>
     <string name="premiumTier">Premium User</string>
+    <string name="home">Home</string>
+    <string name="settings">Settings</string>
+    <string name="gyms">Gyms</string>
+    <string name="public_plans">Public plans</string>
+    <string name="workouts">Workouts</string>
+    <string name="sets">Sets</string>
 </resources>

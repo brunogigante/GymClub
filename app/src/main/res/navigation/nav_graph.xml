@@ -7,7 +7,7 @@
     <fragment
         android:id="@+id/plansFragment"
         android:name="localhost.cm.gymclub.ui.plans.PlansFragment"
-        android:label="fragment_plans"
+        android:label="@string/home"
         tools:layout="@layout/fragment_plans">
         <action
             android:id="@+id/action_plansFragment_to_planWorkoutFragment"
@@ -23,11 +23,12 @@
     <fragment
         android:id="@+id/mapsFragment"
         android:name="localhost.cm.gymclub.ui.maps.MapsFragment"
-        android:label="fragment_maps"
+        android:label="@string/gyms"
         tools:layout="@layout/fragment_maps" />
     <fragment
         android:id="@+id/planWorkoutFragment"
-        android:name="localhost.cm.gymclub.ui.workouts.PlanWorkouts">
+        android:name="localhost.cm.gymclub.ui.workouts.PlanWorkouts"
+        android:label="@string/workouts">
         <argument
             android:name="planId"
             app:argType="integer" />
@@ -41,16 +42,16 @@
     <fragment
         android:id="@+id/publicPlansFragment"
         android:name="localhost.cm.gymclub.ui.plans.PublicPlansFragment"
-        android:label="fragment_public_plans"
+        android:label="@string/public_plans"
         tools:layout="@layout/fragment_public_plans" />
     <fragment
         android:id="@+id/addPlanFragment"
         android:name="localhost.cm.gymclub.ui.plans.AddPlanFragment"
-        android:label="AddPlanFragment" />
+        android:label="@string/add_plan" />
     <fragment
         android:id="@+id/addWorkoutFragment"
         android:name="localhost.cm.gymclub.ui.workouts.AddWorkoutFragment"
-        android:label="fragment_add_workout"
+        android:label="@string/add_workout"
         tools:layout="@layout/fragment_add_workout" >
         <argument
             android:name="planId"
@@ -59,12 +60,12 @@
     <fragment
         android:id="@+id/profileFragment"
         android:name="localhost.cm.gymclub.ui.profile.ProfileFragment"
-        android:label="fragment_profile"
+        android:label="@string/settings"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/planWorkoutsExercises"
         android:name="localhost.cm.gymclub.ui.exercises.ExercisesFragment"
-        android:label="PlanWorkoutsExercises" >
+        android:label="@string/exercises" >
         <argument
             android:name="workoutId"
             app:argType="integer" />
@@ -78,7 +79,7 @@
     <fragment
         android:id="@+id/addWorkoutExerciseFragment"
         android:name="localhost.cm.gymclub.ui.exercises.AddExerciseFragment"
-        android:label="AddWorkoutExerciseFragment" >
+        android:label="@string/add_exercise" >
         <argument
             android:name="workoutId"
             app:argType="integer" />
@@ -86,7 +87,7 @@
     <fragment
         android:id="@+id/setsFragment"
         android:name="localhost.cm.gymclub.ui.sets.SetsFragment"
-        android:label="Exercise Sets" >
+        android:label="@string/sets" >
         <argument
             android:name="workoutId"
             app:argType="integer" />
@@ -100,7 +101,7 @@
     <fragment
         android:id="@+id/addSet"
         android:name="localhost.cm.gymclub.ui.sets.AddSetsFragment"
-        android:label="Add Sets" >
+        android:label="@string/add_set" >
         <argument
             android:name="workoutId"
             app:argType="integer" />
