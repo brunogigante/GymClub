@@ -14,15 +14,15 @@ class PublicPlansViewModel @Inject constructor(private val dataRepository: DataR
     ViewModel() {
     var publicPlans = MutableLiveData<List<TrainingPlanResponse>>()
 
-    init {
-        viewModelScope.launch {
-            publicPlans.value = dataRepository.getPublicPlans()
-        }
-    }
-
     fun clonePlan(planId: Int) {
         viewModelScope.launch {
             dataRepository.clonePlan(planId)
+        }
+    }
+
+    fun getData(){
+        viewModelScope.launch {
+            publicPlans.value = dataRepository.getPublicPlans()
         }
     }
 }

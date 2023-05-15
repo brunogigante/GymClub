@@ -29,6 +29,7 @@ class PublicPlansFragment : Fragment() {
         super.onResume()
         val recycler = requireView().findViewById<RecyclerView>(R.id.fragment_recycler_view)
 
+        viewModel.getData()
         viewModel.publicPlans.observe(viewLifecycleOwner) {
             recycler.apply {
                 adapter = PublicPlansAdapter(it, viewModel)

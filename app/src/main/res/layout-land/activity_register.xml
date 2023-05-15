@@ -27,7 +27,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/editTextTextConfirmPassword" />
+            app:layout_constraintTop_toBottomOf="@id/editTextConfirmPassword" />
 
         <TextView
             android:id="@+id/textSignIN"
@@ -42,7 +42,7 @@
             app:layout_constraintTop_toBottomOf="@id/button2" />
 
         <EditText
-            android:id="@+id/editTextTextEmailAddress"
+            android:id="@+id/editTextEmailAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -65,7 +65,7 @@
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+                app:layout_constraintTop_toBottomOf="@+id/editTextEmailAddress" />
 
             <EditText
                 android:id="@+id/editTextTextLastName"
@@ -80,7 +80,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/editTextTextFirstName" />
 
             <EditText
-            android:id="@+id/editTextTextPassword"
+            android:id="@+id/editTextPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -92,7 +92,7 @@
             app:layout_constraintTop_toBottomOf="@+id/editTextTextLastName" />
 
         <EditText
-            android:id="@+id/editTextTextConfirmPassword"
+            android:id="@+id/editTextConfirmPassword"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
@@ -101,7 +101,7 @@
             android:inputType="textPassword"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/editTextTextPassword" />
+            app:layout_constraintTop_toBottomOf="@id/editTextPassword" />
 
         <TextView
             android:id="@+id/textView"
@@ -112,7 +112,7 @@
             android:textColor="@color/black"
             android:textSize="25dp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/editTextTextEmailAddress"
+            app:layout_constraintBottom_toTopOf="@+id/editTextEmailAddress"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@id/imageView" />
