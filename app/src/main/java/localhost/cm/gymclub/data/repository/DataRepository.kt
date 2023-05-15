@@ -44,6 +44,6 @@ class DataRepository(private val dataService: DataService) {
 
     suspend fun getWorkoutExerciseSets(workoutId: Int, exerciseId: Int) = dataService.getWorkoutExerciseSets(workoutId, exerciseId)
 
-    suspend fun createExerciseSet(setId: Int, reps: Int, weight: Int, workoutId: Int, exerciseId: Int) = dataService.createExerciseSet(setId, reps, weight, workoutId, exerciseId, WorkoutExerciseSetCreationRequest(workoutId, exerciseId))
+    suspend fun createExerciseSet(reps: Int, weight: Int, workoutId: Int, exerciseId: Int) = dataService.createExerciseSet(workoutId, exerciseId, WorkoutExerciseSetCreationRequest(reps, weight))
 
 }

@@ -14,19 +14,15 @@ import androidx.navigation.fragment.navArgs
 import dagger.hilt.android.AndroidEntryPoint
 import localhost.cm.gymclub.R
 
-private const val SET_ID_ARG = "setId"
 
 @AndroidEntryPoint
 class AddSetsFragment : Fragment() {
     private val viewModel: AddSetsViewModel by viewModels()
     private val args: AddSetsFragmentArgs by navArgs()
-    private var selectSetId: Int? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            selectSetId = it.getInt(SET_ID_ARG)
-        }
+
     }
 
     override fun onCreateView(
@@ -45,14 +41,14 @@ class AddSetsFragment : Fragment() {
         val addButton = view.findViewById<Button>(R.id.addExerciseButton)
 
         addButton.setOnClickListener {
-/*            selectSetId?.let { it1 ->
-                viewModel.addNewSetToExercise(
-                    it1,
-                    Integer.parseInt(reps.text.toString()),
-                    Integer.parseInt(weight.text.toString())
-                )*/
+            viewModel.addNewSetToExercise(
+                Integer.parseInt(reps.text.toString()),
+                Integer.parseInt(weight.text.toString()),
+                args.workoutId,
+                args.exerciseId
+            )
             Toast.makeText(context, "Successfully created workout", Toast.LENGTH_LONG).show()
             view.findNavController().popBackStack()
-            }
         }
+    }
 }

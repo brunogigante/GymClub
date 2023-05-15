@@ -72,6 +72,6 @@ interface DataService {
     suspend fun getSets(): List<SetResponse>
 
     @POST("/plans/workouts/{workoutId}/exercises/{exerciseId}/sets")
-    suspend fun createExerciseSet(@Path("setId") setId: Int, @Path("reps") reps: Int, @Path("weight") weight: Int, @Path("workoutId") workoutId: Int, @Path("exerciseId") exerciseId: Int, @Body workoutExerciseSetCreationRequest: WorkoutExerciseSetCreationRequest)
+    suspend fun createExerciseSet(@Path("workoutId") workoutId: Int, @Path("exerciseId") exerciseId: Int, @Body workoutExerciseSetCreationRequest: WorkoutExerciseSetCreationRequest)
 
 }
