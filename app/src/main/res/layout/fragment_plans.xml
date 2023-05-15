@@ -15,6 +15,7 @@
         android:text="My Plans"
         android:textColor="@color/black"
         android:textStyle="bold"
+        android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.15"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,7 +70,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/fragment_recycler_view"
         android:layout_width="wrap_content"
-        android:layout_height="400dp"
+        android:layout_height="420dp"
 
         android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -83,10 +84,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|bottom"
-        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="40dp"
         android:text="@string/add_plan"
         app:cornerRadius="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@+id/myPlans5"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/myPlans5" />
 </androidx.constraintlayout.widget.ConstraintLayout>
