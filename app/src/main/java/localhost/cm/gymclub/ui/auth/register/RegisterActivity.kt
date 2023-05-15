@@ -22,9 +22,11 @@ class RegisterActivity : AppCompatActivity() {
         binding = ActivityRegisterBinding.inflate(layoutInflater)
 
         binding.signUpButton?.setOnClickListener {
-            val email = binding.editTextTextEmailAddress.text.toString()
-            val password = binding.editTextTextPassword.text.toString()
-            val confirmPassword = binding.editTextTextConfirmPassword.text.toString()
+            val firstName = binding.editTextFirstName?.text.toString()
+            val lastName = binding.editTextLastName?.text.toString()
+            val email = binding.editTextEmailAddressRegister?.text.toString()
+            val password = binding.editTextPasswordRegister?.text.toString()
+            val confirmPassword = binding.editTextConfirmPasswordRegister?.text.toString()
 
             if (password != confirmPassword) {
                 Toast.makeText(
@@ -34,8 +36,15 @@ class RegisterActivity : AppCompatActivity() {
                 ).show()
                 return@setOnClickListener
             }
+            viewModel.register(firstName, lastName, email, password)
 
-            // viewModel.register(email, password)
+            Toast.makeText(
+                this,
+                getString(R.string.user_registered),
+                Toast.LENGTH_LONG).show()
+
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
         }
 
         binding.textSignIN.setOnClickListener {

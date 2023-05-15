@@ -41,7 +41,6 @@ class PlansFragment : Fragment() {
             view.findNavController().navigate(action)
         }
 
-        // get data
         viewModel.getData()
         viewModel.plans.observe(viewLifecycleOwner) {
             recycler.apply {
