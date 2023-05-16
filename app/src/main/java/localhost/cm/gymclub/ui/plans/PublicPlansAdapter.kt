@@ -17,9 +17,12 @@ class PublicPlansAdapter(
 ) : RecyclerView.Adapter<PublicPlansAdapter.ViewHolder>() {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val planTextView: TextView
+        val textViewDesc: TextView
 
         init {
             planTextView = view.findViewById(R.id.planName)
+            textViewDesc = view.findViewById(R.id.planDescriptionTextView)
+
         }
     }
 
@@ -35,6 +38,7 @@ class PublicPlansAdapter(
         val plan = publicPlans[position]
 
         holder.planTextView.text = plan.name
+        holder.textViewDesc.text = plan.description
         holder.itemView.setOnClickListener {
             AlertDialog.Builder(it.context)
                 .setTitle(R.string.clone_plan_confirmation)
