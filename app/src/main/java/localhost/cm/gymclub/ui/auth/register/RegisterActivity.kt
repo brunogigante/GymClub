@@ -47,7 +47,7 @@ class RegisterActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        binding.textSignIN.setOnClickListener {
+        binding.signInTextView?.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
         }
