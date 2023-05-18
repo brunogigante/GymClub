@@ -57,8 +57,12 @@ class SetsFragment : Fragment() {
                 entries.add(Entry(set.weight.toFloat(), set.repetitions.toFloat()))
             }
 
-            val dataset = LineDataSet(entries, "Label")
-            lineChart.data = LineData(dataset)
+            if (entries.size > 0) {
+                val dataset = LineDataSet(entries, "Label")
+                lineChart.data = LineData(dataset)
+            }
+
+
         }
 
 
