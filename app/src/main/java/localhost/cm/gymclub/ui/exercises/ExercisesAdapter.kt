@@ -1,8 +1,10 @@
 package localhost.cm.gymclub.ui.exercises
 
+import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
@@ -16,6 +18,8 @@ class ExercisesAdapter(private val exerciseWorkouts: List<ExerciseResponse>, pri
         val descriptionTextView: TextView
         val weightValue: TextView
         val repetitionsValue: TextView
+        val exerciseImage: ImageView
+
 
         init {
             exerciseNameTextView = view.findViewById(R.id.exerciseNameTextView)
@@ -23,6 +27,7 @@ class ExercisesAdapter(private val exerciseWorkouts: List<ExerciseResponse>, pri
             descriptionTextView = view.findViewById(R.id.textViewDescription)
             weightValue = view.findViewById(R.id.weightValue)
             repetitionsValue = view.findViewById(R.id.repetitionsValue)
+            exerciseImage = view.findViewById(R.id.imageView2)
         }
     }
 
@@ -36,12 +41,29 @@ class ExercisesAdapter(private val exerciseWorkouts: List<ExerciseResponse>, pri
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val exercise = exerciseWorkouts[position]
-
+        val categoryImageMap: Map<String, Int> = mapOf(
+            "CHEST" to R.drawable.bench_press_ilustration,
+            "BACK" to R.drawable.pulldown_ilustration,
+            "LEGS" to R.drawable.barbell_squat_ilustration,
+            /*"CALVES" to R.drawable.barbell_squat_ilustration,
+            "SHOULDERS" to R.drawable.barbell_squat_ilustration,
+            "BICEPS" to R.drawable.barbell_squat_ilustration,
+            "TRICEPS" to R.drawable.barbell_squat_ilustration,
+            "ABS" to R.drawable.barbell_squat_ilustration,*/
+            // Add more mappings for other categories
+        )
         holder.exerciseNameTextView.text = exercise.name
         holder.categoryTextView.text = exercise.category
         holder.descriptionTextView.text = exercise.description
         holder.repetitionsValue.text = exercise.repetitions.toString()
         holder.weightValue.text = exercise.weight.toString() + " Kg"
+
+        val category = exercise.category
+        val imageResId = categoryImageMap[category]
+        imageResId?.let {
+            holder.exerciseImage.setImageResource(it)
+        }
+
         holder.itemView.setOnClickListener {
             val action =
                 ExercisesFragmentDirections.actionPlanWorkoutsExercisesToSetsFragment(workoutId, exercise.id)
@@ -49,4 +71,5 @@ class ExercisesAdapter(private val exerciseWorkouts: List<ExerciseResponse>, pri
             navController.navigate(action)
         }
     }
+
 }
