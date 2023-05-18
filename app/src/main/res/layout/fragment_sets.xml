@@ -25,22 +25,22 @@
         android:layout_width="wrap_content"
         android:layout_height="300dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50dp"
-        app:layout_constraintEnd_toEndOf="@+id/set"
-        app:layout_constraintStart_toStartOf="@+id/set"
-        app:layout_constraintTop_toBottomOf="@+id/set" />
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/addSet"
+        app:layout_constraintStart_toStartOf="@+id/addSet"
+        app:layout_constraintTop_toBottomOf="@+id/addSet" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/addSet"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|bottom"
-        android:layout_marginBottom="24dp"
+        android:layout_marginTop="16dp"
         android:text="@string/add_set"
         app:cornerRadius="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="@+id/set"
+        app:layout_constraintStart_toStartOf="@+id/set"
+        app:layout_constraintTop_toBottomOf="@+id/set" />
 
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/line_chart"
