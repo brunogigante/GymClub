@@ -87,7 +87,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
         app:shapeAppearanceOverlay="@style/roundImageView"
-        app:srcCompat="@drawable/bench_press" />
+        app:srcCompat="@drawable/dumbbells" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

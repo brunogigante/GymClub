@@ -52,7 +52,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:shapeAppearanceOverlay="@style/roundImageView"
-        app:srcCompat="@drawable/bench_press" />
+        app:srcCompat="@drawable/workout_plan_illustration" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
