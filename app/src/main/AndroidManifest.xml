@@ -45,7 +45,8 @@
         <activity
             android:name=".ui.auth.login.LoginActivity"
             android:exported="true"
-            android:theme="@style/Theme.GymClub.NoActionBar">
+            android:theme="@style/Theme.GymClub.NoActionBar"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

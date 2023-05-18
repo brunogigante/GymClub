@@ -12,13 +12,15 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.github.mikephil.charting.charts.LineChart
+import com.github.mikephil.charting.data.Entry
+import com.github.mikephil.charting.data.LineData
+import com.github.mikephil.charting.data.LineDataSet
 import dagger.hilt.android.AndroidEntryPoint
 import localhost.cm.gymclub.R
-import localhost.cm.gymclub.ui.exercises.ExercisesAdapter
-import localhost.cm.gymclub.ui.workouts.PlanWorkoutsDirections
 
 @AndroidEntryPoint
-class SetsFragment : Fragment(){
+class SetsFragment : Fragment() {
     private val viewModel: SetsViewModel by viewModels()
     private val args: SetsFragmentArgs by navArgs()
     private var setId: Long? = null
@@ -29,6 +31,7 @@ class SetsFragment : Fragment(){
     ): View? {
         return inflater.inflate(R.layout.fragment_sets, container, false)
     }
+
     override fun onResume() {
         super.onResume()
 
@@ -37,6 +40,8 @@ class SetsFragment : Fragment(){
         val setTexView = view.findViewById<TextView>(R.id.setsNameTextView)
         val setNumber = view.findViewById<TextView>(R.id.setsNameTextView)
         val addButton = view.findViewById<Button>(R.id.addSet)
+        val lineChart = view.findViewById<LineChart>(R.id.line_chart)
+
 
         viewModel.getSetsFromExercises(args.workoutId, args.exerciseId)
 
@@ -45,11 +50,21 @@ class SetsFragment : Fragment(){
                 adapter = SetsAdapter(it)
                 layoutManager = LinearLayoutManager(context)
             }
+
+            // chart
+            val entries = mutableListOf<Entry>()
+            for (set in it) {
+                entries.add(Entry(set.weight.toFloat(), set.repetitions.toFloat()))
+            }
+
+            val dataset = LineDataSet(entries, "Label")
+            lineChart.data = LineData(dataset)
         }
 
 
         addButton.setOnClickListener {
-            val action = SetsFragmentDirections.actionSetsFragmentToAddSet(args.workoutId, args.exerciseId)
+            val action =
+                SetsFragmentDirections.actionSetsFragmentToAddSet(args.workoutId, args.exerciseId)
             view.findNavController().navigate(action)
         }
     }
