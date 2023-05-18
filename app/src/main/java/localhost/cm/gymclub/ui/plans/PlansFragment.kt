@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.button.MaterialButton
@@ -34,6 +35,7 @@ class PlansFragment : Fragment() {
         val recycler = view.findViewById<RecyclerView>(R.id.fragment_recycler_view)
         val usernameTextView = view.findViewById<TextView>(R.id.usernameTextView)
         val newPlanButton = view.findViewById<MaterialButton>(R.id.add_workout)
+        val settingsOption = view.findViewById<View>(R.id.settingsOption)
 
 
         newPlanButton.setOnClickListener {
@@ -50,6 +52,11 @@ class PlansFragment : Fragment() {
         }
         viewModel.user.observe(viewLifecycleOwner) {
             usernameTextView.text = it.fullName
+        }
+
+        settingsOption.setOnClickListener {
+            val action = PlansFragmentDirections.actionPlansFragmentToProfileFragment()
+            view.findNavController().navigate(action)
         }
     }
 

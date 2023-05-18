@@ -19,6 +19,9 @@
         <action
             android:id="@+id/action_plansFragment_to_addPlanFragment"
             app:destination="@id/addPlanFragment" />
+        <action
+            android:id="@+id/action_plansFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
     <fragment
         android:id="@+id/mapsFragment"
